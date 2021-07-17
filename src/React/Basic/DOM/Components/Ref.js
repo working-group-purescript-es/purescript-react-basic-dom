@@ -2,7 +2,7 @@
 
 var React = require("react");
 
-exports.mkRef = function(toMaybe) {
+export var mkRef = function(toMaybe) {
   var Ref = function(_props) {
     this.state = { node: null };
     this.ref = React.createRef();

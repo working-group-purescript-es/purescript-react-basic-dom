@@ -2,10 +2,10 @@
 
 const React = require("react");
 
-exports.mergeStyles = (styles) =>
+export var mergeStyles = (styles) =>
   Object.assign.apply(null, [{}].concat(styles));
 
-exports.unsafeCreateDOMComponent_ = (createElement) => (el) => {
+export var unsafeCreateDOMComponent_ = (createElement) => (el) => {
   const flattenDataProp = (props, ref) => {
     var data = null;
     if (props._data != null) {

@@ -2,6 +2,6 @@
 
 const ReactDOMServer = require("react-dom/server");
 
-exports.renderToString = ReactDOMServer.renderToString;
+export var renderToString = ReactDOMServer.renderToString;
 
-exports.renderToStaticMarkup = ReactDOMServer.renderToStaticMarkup;
+export var renderToStaticMarkup = ReactDOMServer.renderToStaticMarkup;
