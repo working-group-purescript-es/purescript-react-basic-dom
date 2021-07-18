@@ -1,6 +1,6 @@
 "use strict";
 
-var React = require("react");
+import React from "react";
 
 export var _passiveSupported = null;
 
@@ -87,9 +87,9 @@ GlobalEvent.prototype.render = function() {
   return this.props.child;
 };
 
-var globalEvent_ = GlobalEvent;
+export var globalEvent_ = GlobalEvent;
 
-var unsafeWindowEventTarget = (function() {
+export var unsafeWindowEventTarget = (function() {
   if (typeof window === "undefined") {
     return undefined;
   } else {
