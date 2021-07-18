@@ -1,6 +1,6 @@
 "use strict";
 
-const ReactDOM = require("react-dom");
+import ReactDOM from "react-dom";
 
 export var renderThen = (jsx) => (node) => (callback) => () =>
   ReactDOM.render(jsx, node, callback);

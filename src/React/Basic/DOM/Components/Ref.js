@@ -1,6 +1,6 @@
 "use strict";
 
-var React = require("react");
+import React from "react";
 
 export var mkRef = function(toMaybe) {
   var Ref = function(_props) {
