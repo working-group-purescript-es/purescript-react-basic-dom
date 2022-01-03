@@ -1,6 +1,6 @@
 "use strict";
 
-const ReactDOM = require("react-dom");
+import ReactDOM from "react-dom";
 const createRoot = ReactDOM.createRoot || ReactDOM.unstable_createRoot;
 const createBlockingRoot =
   ReactDOM.createBlockingRoot || ReactDOM.unstable_createBlockingRoot;

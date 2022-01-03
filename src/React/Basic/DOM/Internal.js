@@ -1,6 +1,6 @@
 "use strict";
 
-const React = require("react");
+import React from "react"
 
 export var mergeStyles = (styles) =>
   Object.assign.apply(null, [{}].concat(styles));
