@@ -29,14 +29,18 @@ import Web.DOM (Element)
 -- |
 -- | __*Note:* Relies on `ReactDOM.render`__
 render :: JSX -> Element -> Effect Unit
-render jsx node = render' jsx node (pure unit)
+render jsx node = renderImpl jsx node (pure unit)
 
 -- | Render or update/re-render a component tree into
 -- | a DOM element. The given Effect is run once the
 -- | DOM update is complete.
 -- |
 -- | __*Note:* Relies on `ReactDOM.render`__
-foreign import render' :: JSX -> Element -> Effect Unit -> Effect Unit
+foreign import renderImpl :: JSX -> Element -> Effect Unit -> Effect Unit
+
+-- For backwards compatibility
+render' :: JSX -> Element -> Effect Unit -> Effect Unit
+render' = renderImpl
 
 -- | Render or update/re-render a component tree into
 -- | a DOM element, attempting to reuse the existing
@@ -56,7 +60,10 @@ hydrate jsx node = hydrate' jsx node (pure unit)
 -- | __*Note:* Relies on `ReactDOM.hydrate`, generally only
 -- |   used with `ReactDOMServer.renderToNodeStream` or
 -- |   `ReactDOMServer.renderToString`__
-foreign import hydrate' :: JSX -> Element -> Effect Unit -> Effect Unit
+foreign import hydrateImpl :: JSX -> Element -> Effect Unit -> Effect Unit
+-- For backwards compatibility
+hydrate' :: JSX -> Element -> Effect Unit -> Effect Unit
+hydrate' = hydrateImpl
 
 -- | Attempt to unmount and clean up the React app
 -- | rendered into the given element. Returns `true`

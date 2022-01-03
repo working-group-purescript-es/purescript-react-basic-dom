@@ -1,13 +1,13 @@
 "use strict";
 
-const ReactDOM = require("react-dom");
+import { render, hydrate, unmountComponentAtNode, createPortal } from "react-dom";
 
-exports["render'"] = (jsx) => (node) => (callback) => () =>
-  ReactDOM.render(jsx, node, callback);
+export const renderImpl = (jsx) => (node) => (callback) => () =>
+  render(jsx, node, callback);
 
-exports["hydrate'"] = (jsx) => (node) => (callback) => () =>
-  ReactDOM.hydrate(jsx, node, callback);
+export const hydrateImpl = (jsx) => (node) => (callback) => () =>
+  hydrate(jsx, node, callback);
 
-exports.unmount = (node) => () => ReactDOM.unmountComponentAtNode(node);
+export function unmount(node) { return () => unmountComponentAtNode(node); }
 
-exports.createPortal = (jsx) => (node) => ReactDOM.createPortal(jsx, node);
+export function createPortal(jsx) { return (node) => createPortal(jsx, node); }
